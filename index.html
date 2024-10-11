@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - Ibom American University</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-grid.rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="mt-5">Student Registration Form</h2>
+        <form id="registration_form" action="/processors/php/registration.php" method="POST">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="other_names">Other Names</label>
+                <input type="text" class="form-control" name="other_names">
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth</label>
+                <input type="date" class="form-control" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="state_of_origin">State of Origin</label>
+                <select name="state_of_origin" class="form-control" id="state_of_origin" required>
+                    <!-- Dropdown populated with Nigerian states -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lga">Local Government Area</label>
+                <select name="lga" class="form-control" id="lga" required>
+                    <!-- AJAX populates LGA based on selected state -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="jamb_number">JAMB Number</label>
+                <input type="text" class="form-control" name="jamb_number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="tel" class="form-control" name="phone_number" required>
+            </div>
+            <div class="form-group">
+                <label for="year_of_admission">Year of Admission</label>
+                <select name="year_of_admission" class="form-control" required>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="faculty">Faculty</label>
+                <select name="faculty_id" class="form-control" id="faculty" required>
+                    <!-- AJAX populates faculties -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select name="department_id" class="form-control" id="department" required>
+                    <!-- AJAX populates departments based on selected faculty -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="house_address">House Address</label>
+                <textarea class="form-control" name="house_address" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+<div id="successPopup">
+    <span class="success-icon">✔</span>
+    <span>Registration successful!</span>
+</div>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/jquery.js"></script>
+</body>
+</html>
